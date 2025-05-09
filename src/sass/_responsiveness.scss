@@ -1,5 +1,6 @@
 @use "bulma/sass/utilities/mixins" as mxBulma;
 @use "./mixins" as mx;
+@use 'sass:list';
 
 [data-tooltip] {
 	@each $direction in top, right, bottom, left {
@@ -163,8 +164,8 @@
 
 	// Text alignment breakpoints
 	@each $direction in (left, left), (centered, center), (right, right) {
-		$dir: nth($direction, 1);
-		$text: nth($direction, 2);
+		$dir: list.nth($direction, 1);
+		$text: list.nth($direction, 2);
 
 		&.has-tooltip-text-#{$dir}-mobile {
 			@include mxBulma.mobile {
